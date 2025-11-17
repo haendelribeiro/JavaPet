@@ -1,4 +1,3 @@
-src/model/Cliente.java
 package model;
 
 public abstract class Cliente {
