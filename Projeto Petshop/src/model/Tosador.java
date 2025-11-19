@@ -1,5 +1,3 @@
-package model;
-
-public class Tosador extends Funcionario{
+public class Tosador{
 
 }

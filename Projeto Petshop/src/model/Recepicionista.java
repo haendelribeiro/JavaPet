@@ -1,4 +1,2 @@
-package model;
-
-public class Recepicionista extends Funcionario{
+public class Recepicionista{
 }
