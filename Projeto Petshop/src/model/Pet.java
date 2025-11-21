@@ -6,7 +6,8 @@ public class Pet {
     private String especie;
     private String vacina;
     private String hsaude;
-    private Cliente dono;  //vai ser minha chave FK como a professora explicar
+    private Cliente dono;  //vai ser minha chave FK como a professora explicou
+    private int id;
 
     public Pet() {
         this.nome = nome;
@@ -61,5 +62,13 @@ public class Pet {
     }
     public void setDono(Cliente dono) { //aqui ele define o nome do dono
         this.dono = dono;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

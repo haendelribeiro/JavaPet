@@ -1,10 +1,14 @@
 package model;
 
-public abstract class Cliente {
+public class Cliente {
     private String nome;
     private String cpf;
     private String telefone;
     private String endereco;
+
+    // Construtor vazio
+    public Cliente() {
+    }
 
     public Cliente(String nome, String cpf, String telefone, String endereco) {
         if (nome == null || nome.isBlank()) throw new IllegalArgumentException("Nome inválido.");
