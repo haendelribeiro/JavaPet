@@ -1,14 +1,15 @@
 package model;
 
-public class Tosador{
-    public void realizarTosa(Pet animal) {
-        System.out.println("--------------------");
+public class Tosador {
+    private String nome;
 
-        System.out.println("INICIANDO O PROCEDIMENTO DE TOSA . . . .");
-        System.out.println("Tosando o Pet: " + animal.getNome());
-        System.out.println("Especie: " + animal.getEspecie());
-        System.out.println("--------------------");
+    public Tosador() {}
+
+    public String getNome() {
+        return nome;
     }
 
-
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }

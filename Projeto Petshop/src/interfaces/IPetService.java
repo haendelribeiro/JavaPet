@@ -15,5 +15,5 @@ public interface IPetService {
     void atualizarPet(String nomeAntigo, String nomeNovo);
 
     //deletar
-    void deletarPet(String nome);
+    void deletarPet(int id);
 }

@@ -8,7 +8,7 @@ import service.TosadorService;
 import java.util.List;
 
 public class TosadorController {
-    private ITosadorService service = new ITosadorService();
+    private ITosadorService service = new TosadorService();
 
     public void cadastrar(Tosador t) {
         service.cadastrarTosador(t);

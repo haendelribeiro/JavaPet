@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TosadorService implements ITosadorService {
-    private List<Tosador> bancoDeTosadores = new ArrayList<>();
+    private final List<Tosador> bancoDeTosadores = new ArrayList<>();
 
     // Cadastrar (Create)
     @Override
@@ -25,7 +25,7 @@ public class TosadorService implements ITosadorService {
     //atualizar (Update)
     @Override
     public void atualizarTosador(String nomeAntigo, String nomeNovo) {
-        for (tosador t : bancoDeTosadores) {
+        for (Tosador t : bancoDeTosadores) {
             if (t.getNome().equalsIgnoreCase(nomeAntigo)) {
                 t.setNome(nomeNovo);
                 System.out.println("Tosador atualizado para: " + nomeNovo);
@@ -40,7 +40,7 @@ public class TosadorService implements ITosadorService {
         boolean removeu = bancoDeTosadores.removeIf(t -> t.getNome().equalsIgnoreCase(nome));
 
         if (removeu) {
-            System.out.println("Tosador " + nome " removido com sucesso!");
+            System.out.println("Tosador " + nome + " removido com sucesso!");
         } else {
             System.out.println("Tosador não encontrado para remoção.");
         }

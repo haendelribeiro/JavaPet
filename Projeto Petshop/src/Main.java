@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import controller.PetController;
+import controller.TosadorController;
 import model.Cliente;
 import model.Pet;
 import model.Tosador;
@@ -16,6 +17,7 @@ public class Main {
 
         //fim da criação das variaveis
 
+        //inicio cadastro do pet
         System.out.println("--- SISTEMA JAVAA PET ---");
 
         System.out.println("Qual o nome do pet?");
@@ -26,11 +28,23 @@ public class Main {
         c.setNome("João");
         p.setDono(c);
 
-        controller.cadastrarPet(p);
+        controller.cadastrarPet(p); //cadastra meu bicnho e imprime
+
         System.out.println("--- LISTA DE PETS CADASTRADOS ---");
         for (Pet  petCadastrado : controller.listar()) {
             System.out.println("Nome: " + p.getNome() + "\nIdade: " + p.getIdade() + "\nDono: " + p.getDono().getNome());
         }
+        System.out.println("\n--- Corte rapido Tramontina---");
+
+        TosadorController Tosando = new TosadorController();
+
+        Tosador t1 = new Tosador();
+        t1.setNome("Eduardo mãos de tesouras");
+
+        Tosando.cadastrar(t1);
+
+        Tosando.realizarTosa(p);
+        //fim do cadastro do pet
 
 
     }

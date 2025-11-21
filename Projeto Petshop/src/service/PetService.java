@@ -12,13 +12,11 @@ public class PetService implements  IPetService {
 
     @Override
     public void cadastrarPet(Pet p) {
-        if (p.getNome() == null || p.getNome().isEmpty()) {
-        System.out.println("Erro! O Pet precisa ter um nome!!!");
-        return;
-    }
+        p.setId(ids);
+        ids++;
 
-    BancoDePets.add(p);
-    System.out.println("Pet: " + p.getNome() + " Cadastrado com sucesso!!!");
+        BancoDePets.add(p);
+        System.out.println("Pet: " + p.getNome() + " Cadastrado com sucesso!!!");
 
     }
 
@@ -40,13 +38,13 @@ public class PetService implements  IPetService {
     }
 
     @Override
-    public void deletarPet(String nome) {
-        boolean removeu = BancoDePets.removeIf(p -> p.getNome().equalsIgnoreCase(nome));
+    public void deletarPet(int idParaDeletar) {
+        boolean removeu = BancoDePets.removeIf(p -> p.getId() == idParaDeletar);
 
         if (removeu) {
-            System.out.print("Pet" + nome " removido com sucesso!");
+            System.out.println("Pet com ID " + idParaDeletar + " foi deletado.");
         } else {
-            System.out.print("Pet não encontrado para remoção.");
+            System.out.println("Erro: Pet com ID " + idParaDeletar + " não existe.");
         }
     }
 }
