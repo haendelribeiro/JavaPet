@@ -1,25 +1,37 @@
 import java.util.Scanner;
+import controller.PetController;
+import model.Cliente;
 import model.Pet;
+import model.Tosador;
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner (System.in);
+        //criação das variaveis
+
+        Scanner sc = new Scanner(System.in); //parece o input do python
+        PetController controller = new PetController();
         Pet p = new Pet();
+        Cliente c = new Cliente();
 
-        //CADASTRO DO PET
-        System.out.println("Qual o nome do Pet?");
-        p.setNome (sc.next() );
-        System.out.println("Qual a Idade do Pet?");
-        p.setIdade (sc.nextInt());
-        System.out.println("Qual a espécie do Pet?");
-        p.setEspecie (sc.next() );
-        System.out.println("Qual o historico de saude do pet? informe caso haja");
-        p.setHsaude (sc.next() );
-        System.out.println("Informe as vacinas tomadas, caso não haja, informe ao sistema");
-        p.setVacina (sc.next() );
+        //fim da criação das variaveis
 
-        //teste pet
-        System.out.println(p.getNome());
+        System.out.println("--- SISTEMA JAVAA PET ---");
+
+        System.out.println("Qual o nome do pet?");
+        p.setNome(sc.nextLine());
+        System.out.println("Qual a idade do Pet?");
+        p.setIdade(sc.nextInt());
+
+        c.setNome("João");
+        p.setDono(c);
+
+        controller.cadastrarPet(p);
+        System.out.println("--- LISTA DE PETS CADASTRADOS ---");
+        for (Pet  petCadastrado : controller.listar()) {
+            System.out.println("Nome: " + p.getNome() + "\nIdade: " + p.getIdade() + "\nDono: " + p.getDono().getNome());
+        }
+
+
     }
 }
